@@ -16,10 +16,5 @@ jobs:
           echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" | base64 -d > gcp_auth.json
           export GOOGLE_APPLICATION_CREDENTIALS=gcp_auth.json
 
-      - name: Initialize Terraform (Optional)
-        run: terraform init
-
-      - name: Run Terraform apply
-        run: terraform apply -auto-approve
-
+          echo "Cred retrive successfully"
 
