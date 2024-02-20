@@ -1,7 +1,7 @@
 name: Run Terraform Script with Google Cloud Service Account
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 
 jobs:
