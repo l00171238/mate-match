@@ -1,45 +1,25 @@
-name: Build and deploy GKE cluster
-
+name: Run Terraform Script with Google Cloud Service Account
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
+  pull_request:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Use Google Cloud authentication
+      - name: Set up Google Cloud authentication
         run: |
-          echo "GOOGLE_CREDENTIALS_JSON=$(base64 -d ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }})" >> $HOME/.google/credentials.json
-          gcloud auth activate-service-account --key-file=$HOME/.google/credentials.json
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" | base64 -d > gcp_auth.json
+          export GOOGLE_APPLICATION_CREDENTIALS=gcp_auth.json
 
-      - name: Install Terraform
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y terraform
+      - name: Initialize Terraform (Optional)
+        run: terraform init
 
-      - name: Initialize Terraform
-        run: terraform init -backend-config="remote_state_config/remote-state.tf"
-
-      - name: Plan Terraform changes
-        run: terraform plan -out=plan.out -var-file=vars.tf
-
-      - name: Apply Terraform changes
-        run: |
-          if [[ $(cat plan.out | grep Change | wc -l) -eq 0 ]]; then
-            echo "No changes to apply. Skipping Terraform apply."
-          else
-            terraform apply -no-color -auto-approve
-
-            # Optionally, store state in an external backend for version control:
-            # terraform state push -remote=gcloud -config=remote-state.tf
-
-          fi
-
-      - name: Get Kubectl configuration
-        run: |
-          gcloud container clusters get-credentials gke-cluster-name --region europe-west1-d
+      - name: Run Terraform apply
+        run: terraform apply -auto-approve
 
 
