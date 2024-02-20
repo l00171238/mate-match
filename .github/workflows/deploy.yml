@@ -12,7 +12,7 @@ jobs:
 
       - name: Use Google Cloud authentication
         run: |
-          echo "GOOGLE_CREDENTIALS_JSON=$(base64 -d ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }})" >> $HOME/.google/credentials.json
+          echo "GOOGLE_CREDENTIALS_JSON=$(base64 -d ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }})" >> $HOME/.google/credentials.json
           gcloud auth activate-service-account --key-file=$HOME/.google/credentials.json
 
       - name: Install Terraform
