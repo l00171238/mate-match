@@ -23,10 +23,8 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 'latest'
-        
-      - name: change working directory
-        run: cd terraform
-         
+          tf_actions_working_dir: 'terraform'
+
       - name: Terraform Init
         run: terraform init 
 
