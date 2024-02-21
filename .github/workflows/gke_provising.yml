@@ -25,10 +25,10 @@ jobs:
           terraform_version: 'latest'
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform init terraform
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan terraform
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve terraform
