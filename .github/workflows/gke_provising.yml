@@ -28,7 +28,6 @@ jobs:
         with:
           terraform_version: 'latest'
 
-
       - name: Terraform Init
         run: terraform init 
 
