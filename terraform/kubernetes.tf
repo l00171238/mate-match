@@ -65,4 +65,6 @@ resource "google_container_cluster" "primary" {
     machine_type = "n1-standard-1"
     disk_size_gb = 100
   }
+
+  depends_on = [google_compute_network.main, google_compute_subnetwork.main]
 }

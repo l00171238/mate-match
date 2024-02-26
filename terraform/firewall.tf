@@ -1,6 +1,5 @@
 resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ssh"
-  vpc     = "main"
   network = google_compute_network.vpc.main
 
   allow {
@@ -9,4 +8,5 @@ resource "google_compute_firewall" "allow-ssh" {
   }
 
   source_ranges = ["0.0.0.0/0"]
+  depends_on = [google_compute_network.vpc.main]
 }

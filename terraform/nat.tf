@@ -10,19 +10,19 @@ resource "google_compute_router_nat" "nat" {
 // define the NAT configuration specifying the subnet to NAT
   subnetwork {
     name = google_compute_subnetwork.private.id 
-    source_ip_ranges_to_nat = "ALL_IP_RANGES"
+    source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
     }
 
 nat_ip {
     name = google_compute_address.nat.self.link
     }
-
+}
 resource "google_compute_address" "nat" {
   name = "nat"
   region = "europe-west1"
   address_type = "EXTERNAL"
   network_tier = "PREMIUM"
-  }
+  
   depends_on = [google_compute_router_nat.nat]
-
 }
+
