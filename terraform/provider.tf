@@ -8,7 +8,7 @@ provider "google" {
 
 terraform {
     backend "gcs" {
-      bucket  = "first-terraform-state-bucket"
+      bucket  = "first-my-terraform-state-bucket"
       prefix  = "terraform/state"
     }
 
