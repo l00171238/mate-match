@@ -1,6 +1,6 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
 resource "google_service_account" "terraform" {
-  account_id = "terraform"
+  account_id = "terraform@heroic-psyche-414901.iam.gserviceaccount.com"
 }
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project_iam
