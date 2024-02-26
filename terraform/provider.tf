@@ -1,8 +1,10 @@
+// define project ID and region as variables
 provider "google" {
     project = var.my_project_id
     region  = var.my_region
   }
 
+// create a bucket to store State file
 
 terraform {
     backend "gcs" {
@@ -11,7 +13,7 @@ terraform {
     }
 
 
-
+// version control for the provider
 
   required_providers {
     google = {
