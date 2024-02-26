@@ -1,36 +1,50 @@
-name: Provision GKE
+name: 'Terraform'
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  provision:
+  terraform:
+    name: 'Terraform'
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: ./terraform
+        shell: bash
+
+    # Define GOOGLE_CREDENTIALS environment variable
+    
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    
+    - name: Checkout
+      uses: actions/checkout@v3
 
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.0
-        with:
-          version: 'latest'
-          service_account_key: ${{ secrets.Google_SA_key }}
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-      - name: Configure Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 'latest'
+    - name: Terraform Init
+      run: terraform init
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
 
-      - name: Terraform Init
-        run: terraform init 
+    - name: Terraform Format
+      run: terraform fmt -check
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
 
-      - name: Terraform Plan
-        run: terraform plan 
+    - name: Terraform Plan
+      run: terraform plan -input=false
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
 
+    # - name: Terraform Apply
+    #   if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+    #   run: terraform apply -auto-approve -input=false
