@@ -1,5 +1,4 @@
-//define route to access the internet for pulling image from Docker hub 
-
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_router
 resource "google_compute_router" "router" {
   name    = "router"
   region  = "europe-west1"

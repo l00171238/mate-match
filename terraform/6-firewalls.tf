@@ -1,6 +1,7 @@
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall
 resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ssh"
-  network = google_compute_network.vpc.main
+  network = google_compute_network.main.name
 
   allow {
     protocol = "tcp"
@@ -8,5 +9,4 @@ resource "google_compute_firewall" "allow-ssh" {
   }
 
   source_ranges = ["0.0.0.0/0"]
-  depends_on = [google_compute_network.vpc.main]
 }
