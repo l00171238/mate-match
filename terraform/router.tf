@@ -2,6 +2,6 @@
 
 resource "google_compute_router" "router" {
   name    = "router"
-  region  = var.region
+  region  = "europe-west1"
   network = google_compute_network.main.id
 }
