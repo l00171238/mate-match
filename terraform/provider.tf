@@ -1,7 +1,7 @@
 // define project ID and region as variables
 provider "google" {
-    project = var.my_project_id
-    region  = var.my_region
+    project = "heroic-psyche-414901"
+    region  = "europe-west1"
   }
 
 // create a bucket to store State file
