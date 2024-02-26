@@ -1,4 +1,4 @@
-resource "google_compute_firewalld" "allow-ssh" {
+resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ssh"
   network = google_compute_network.vpc.main
 
