@@ -1,9 +1,10 @@
 name: 'Terraform'
-
 on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: read
 jobs:
   terraform:
     name: 'Terraform'
@@ -13,10 +14,7 @@ jobs:
       run:
         shell: bash
         working-directory: ./terraform
-
-    # Define GOOGLE_CREDENTIALS environment variable
-    
-
+  
     steps:
     
     - name: Checkout
