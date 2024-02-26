@@ -16,6 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./terraform
 
     # Define GOOGLE_CREDENTIALS environment variable
     
