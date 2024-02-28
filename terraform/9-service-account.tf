@@ -13,5 +13,5 @@ resource "google_project_iam_member" "terraform" {
 resource "google_service_account_iam_member" "terraform" {
   service_account_id = google_service_account.terraform.id
   role               = "roles/iam.workloadIdentityUser"
-  member             = "serviceAccount:devops-v4.svc.id.goog[staging/terraform]"
+  member             = "serviceAccount:heroic-psyche-414901.svc.id.goog[staging/terraform]"
 }
