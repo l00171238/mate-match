@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "heroic-psyche-414901",
+  "private_key_id": "2d224203d9c279da31de0277e568cd456fd973be",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIx2DTfSwszPum\n8FXXCWz4wWtPRfrbSprXUZnU80WxblwKU9dQmPmFITkR7e02BC6YPGiUiqyR0zAD\nakBEyC+1ZdUMJICSzGE1EihVdbPORFmkTSfI8LTAzJX2NpvRIIVLNJG3xy1RHIpZ\n6WkJBgn5fPLp/AvQoYLI2EDygRKg38TGLdqrIFrKUpufccW2vIqItjKVnIootZ8m\nilLU/a0Ci0J41dFpym6vagsDq9outIrMeJq7wDfdp2eohSDJMLyCmpasbSvH9eKH\nMj5fbzBgd2lulvJEnRAUqbjGg3ZPzI1mMJMnoUPjnes4wUKfWeNh9WzGqM0OA51Q\nsTcIwSK9AgMBAAECggEAETFhjTquybdT5Vu3Pg7EkhieA8/OR3EACWgncCDU2vjE\nUO4VBgXTeB78MBjbs0BwbQDfQ7kMRgB7oA89KaaqzzHFKKEHkYqG2HCRm5/Uodkg\ng/1HZuGV2NysCsVqWmIah/IceExKCSQUhNaD9A3cVMzqUDcRG/B4rpI2HY4H9laM\nFgEAVbAbCTpjmPZs9rtn0fTTXosIl4OtfG5d3oiib+xuFY5KDKKerC7ucTj/1sZq\naGFzbpjwDjQh1m6MiAr8e6MNNzTyK4KqPlDDM8BudtkPczhGPGkzmiAtcbHuEGPY\nmK+Xmz1xom4ODIH4mqnl7Wt9Vzwd29g6WAPOHxNUUQKBgQD5XVWtip13XSr9dADT\nQIcFpxULu/HrYLBcmmjzUHzbJ+DVteMd8UW0xvTHVYrnAecs/zl3SxkksB6uCfzU\nTgEd5Z6FDWc2mq/YG/PDBUTYy3r7GOwDVx9PeQV/465G/1AvJ5tb7jeSVs9+vAtJ\ncqElezmMpPp3adjziso2visAHwKBgQDOHxQZ2GrFE3+2GjJ0sJTVGrZB4lC0MjQb\nrViOMBbx8VfbyvWjdnsWSl6E0EZ9T+pTF1WXHxLKmHNf6VNuTTn/BKWKfkNi0XR9\nU+8KMyJlHgoxj4Wk0K/uEp6V277AolNzYuKRanLG54GVbNXarIQqIoSlEhraHQvo\ntnonY+IRowKBgCh++tIDB82BqOCePSARg5vsZWORcxkpi5qOTOrusEga8s1iC28q\nZoqUIN5aSwN28KcDD78KyBuIKoNTBecof8/uIU80PQXGGzZ6W5zZNzQJ33/1rSZh\nuKj8W2NIg13uSoRN51IHnqi6RloriZ206uyeVVs805we6Werq2k2et87AoGASXnm\nrnfpR6t1wTKBfftccsL86WuFnVawIJWglb8qzsBbs2wcOFMJ+Z41J18fYZhVTZ1p\n018uUa4aorwIE6/P1sqPQFlWKCnGPs7mzVoBDs6wj4478864iEN26LDWxNCYsu8z\nGOc7VxA7r0qGyVbqHiMD6dwUWmA0WJaD4PrIIcUCgYAl2vzqlmd5UHElCZcGp0ad\npj6mJ9Gk+681uCXLjRNRLX5gqDlwoZUV4ApzgkXg9hNXWgQaH/QNtdpPE4e6z7LT\nqmcZrpfsPn8/yFuYAt6bBH+kjMWhJEB57MCFbKXSRCH7pmnz/CcLpdT6e1QGKyKN\nyprzsR+uhH31fqT+Ro/q5Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "terraform@heroic-psyche-414901.iam.gserviceaccount.com",
+  "client_id": "117541163181497328640",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/terraform%40heroic-psyche-414901.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
