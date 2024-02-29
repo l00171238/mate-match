@@ -10,10 +10,10 @@ provider "google" {
 
 # https://www.terraform.io/language/settings/backends/gcs
 terraform {
-  backend "gcs" {
-    bucket = "first-my-terraform-state-bucket"
-    prefix = "terraform/state"
-  }
+  # backend "gcs" {
+  #   bucket = "first-my-terraform-state-bucket"
+  #   prefix = "terraform/state"
+  # }
   required_providers {
     google = {
       source  = "hashicorp/google"
