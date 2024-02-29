@@ -68,3 +68,16 @@ resource "google_compute_firewall" "ssh" {
 
     source_ranges = ["0.0.0.0/0"]
 }
+
+terraform {
+  backend "gcs" {
+    bucket = "terraform-state-prod1"
+    prefix = "terraform/state"
+  }
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 4.0"
+    }
+  }
+}
