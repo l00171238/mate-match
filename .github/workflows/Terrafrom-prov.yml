@@ -36,12 +36,12 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
 
-    # - name: Terraform Apply
-    #   run: terraform apply -auto-approve
-    #   env:
-    #     GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}  
-
-    - name: Terraform destroy
-      run: terraform destroy -auto-approve
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
       env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}  
+
+    # - name: Terraform destroy
+    #   run: terraform destroy -auto-approve
+    #   env:
+    #     GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_SA_KEY }}
