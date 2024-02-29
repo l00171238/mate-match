@@ -1,3 +1,8 @@
+provider "google" {
+  project = "heroic-psyche-414901"
+  region  = "europe-west1"
+}
+
 terraform {
   required_providers {
     google = {
