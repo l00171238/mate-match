@@ -1,13 +1,19 @@
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs
 provider "google" {
-  project = "heroic-psyche-414901"
+  project = "prod1-415815"
   region  = "europe-west1"
 }
 
+# https://www.terraform.io/language/settings/backends/gcs
 terraform {
+  backend "gcs" {
+    bucket = "terraform-state-prod1"
+    prefix = "terraform/state"
+  }
   required_providers {
     google = {
-      source = "hashicorp/google"
-      version = "4.47.0"
+      source  = "hashicorp/google"
+      version = "~> 4.0"
     }
   }
 }
@@ -86,18 +92,3 @@ module "gke" {
   ]
 }
 
-
-// bucket for storing terraform state   
-
-terraform {
-  backend "gcs" {
-    bucket = "fterraform-state-prod1"
-    prefix = "terraform/state"
-  }
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 4.0"
-    }
-  }
-}
