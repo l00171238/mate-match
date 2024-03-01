@@ -20,9 +20,9 @@ jobs:
           project_id: ${{secrets.PROJECT_ID}}
           service_account_key:  ${{ secrets.GCR }}
           export_default_credentials: true
-        env:
-          CLOUDSDK_COMPUTE_REGION: europe-west1
 
+      - name: Configure Docker Credentials
+        run: gcloud auth configure-docker -q
 
       - name: Configure Docker Credentials
         run: gcloud auth configure-docker  europe-west1-docker.pkg.dev --quiet
