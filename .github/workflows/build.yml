@@ -25,7 +25,7 @@ jobs:
 
 
       - name: Configure Docker Credentials
-        run: gcloud auth configure-docker  --impersonate-service-account ${{ secrets.SA_EMAIL }}
+        run: gcloud auth configure-docker  europe-west1-docker.pkg.dev
       
       - name: Build and Push Docker Image
         working-directory: ./frontend
