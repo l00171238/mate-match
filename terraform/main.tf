@@ -6,10 +6,10 @@ provider "google" {
 
 # https://www.terraform.io/language/settings/backends/gcs
 terraform {
-  backend "gcs" {
-    bucket = "terraform-state-prod1"
-    prefix = "terraform/state"
-  }
+#   backend "gcs" {
+#     bucket = "terraform-state-prod1"
+#     prefix = "terraform/state"
+#   }
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -91,4 +91,6 @@ module "gke" {
     },
   ]
 }
+
+
 
