@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Login to Google Artifact Registry
-        uses: google/auth@v2
+        uses: google-github-actions/setup-gcloud@v0.4.0
         with:
           credentials: ${{ secrets.GOOGLE_SA_KEY }}
           scopes: https://www.googleapis.com/auth/cloud-platform
