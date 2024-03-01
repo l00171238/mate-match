@@ -23,10 +23,7 @@ jobs:
 
       - name: Configure Docker Credentials
         run: gcloud auth configure-docker -q
-
-      - name: Configure Docker Credentials
-        run: gcloud auth configure-docker  europe-west1-docker.pkg.dev --quiet
-      
+              
       - name: Build and Push Docker Image
         working-directory: ./frontend
         run: |
