@@ -20,6 +20,8 @@ jobs:
           project_id: ${{secrets.PROJECT_ID}}
           service_account_key:  ${{ secrets.GCR }}
           export_default_credentials: true
+        env:
+          CLOUDSDK_COMPUTE_REGION: europe-west1
 
       - name: Configure Docker Credentials
         run: gcloud auth configure-docker -q
@@ -29,8 +31,6 @@ jobs:
         run: |
           docker build -t frontend-argocd/$PROJECT_ID/$IMAGE:$TAG .
           docker push frontend-argocd/$PROJECT_ID/$IMAGE:$TAG
-
-
 
 
 
