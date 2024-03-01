@@ -25,8 +25,8 @@ jobs:
         run: |
           docker build -t my-image .
 
-      - name: Push Docker image
-        uses: piotrkrusinski/action-google-artifact-registry@[version tag]
+      - name: Google Artifact Registry Build & Push
+        uses: piotr-krusinski/action-google-artifact-registry@v1.0
         with:
           google_project_id: prod1-415815
           google_artifact_registry_region: europe-west1
