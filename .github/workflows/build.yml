@@ -23,46 +23,13 @@ jobs:
 
       - name: Configure Docker Credentials
         run: gcloud auth configure-docker -q
-              
+      
       - name: Build and Push Docker Image
         working-directory: ./frontend
         run: |
-          docker build -t frontend-argocd/$PROJECT_ID/$IMAGE:$TAG .
-          docker push frontend-argocd/$PROJECT_ID/$IMAGE:$TAG
+          docker build -t gcr.io/$PROJECT_ID/$IMAGE:$TAG .
+          docker push gcr.io/$PROJECT_ID/$IMAGE:$TAG
 
 
 
 
-
-
-
-
-
-
-      # - name: Install and Build Express Server
-      #   working-directory: ./backend
-      #   run: |
-      #     npm ci
-      #     npm run test
-      #   env:
-      #     CLIENT_URL: ${{secrets.CLIENT_URL}}
-      #     MYSQL_DB: ${{secrets.MYSQL_DB}}
-      #     MYSQL_PORT: ${{secrets.MYSQL_PORT}}
-      #     MYSQL_CLOUD_USER: ${{secrets.MYSQL_CLOUD_USER}}
-      #     MYSQL_CLOUD_PASS: ${{secrets.MYSQL_CLOUD_PASS}}
-      #     MYSQL_CLOUD_HOST: ${{secrets.MYSQL_CLOUD_HOST}}
-      #     ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
-      #     REFRESH_TOKEN_SECRET: ${{secrets.REFRESH_TOKEN_SECRET}}
-      #     BUCKET_NAME: ${{secrets.BUCKET_NAME}}
-      #     BUCKET_REGION: ${{secrets.BUCKET_REGION}}
-      #     BUCKET_ACCESS_KEY: ${{secrets.BUCKET_ACCESS_KEY}}
-      #     BUCKET_SECRET_ACCESS_KEY: ${{secrets.BUCKET_SECRET_ACCESS_KEY}}
-      #     CLOUDFRONT_DISTRIBUTION_ID: ${{secrets.CLOUDFRONT_DISTRIBUTION_ID}}
-      #     CLOUDFRONT_KEY_PAIR_ID: ${{secrets.CLOUDFRONT_KEY_PAIR_ID}}
-      #     CLOUDFRONT_URL: ${{secrets.CLOUDFRONT_URL}}
-      #     SECRET_REGION: ${{secrets.SECRET_REGION}}
-      #     SECRET_SIGNING_KEY: ${{secrets.SECRET_SIGNING_KEY}}
-      #     AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-      #     AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-      #     TEST_USERNAME: ${{secrets.TEST_USERNAME}}
-      #     TEST_PASSWORD: ${{secrets.TEST_PASSWORD}}
