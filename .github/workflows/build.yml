@@ -23,8 +23,9 @@ jobs:
         env:
           CLOUDSDK_COMPUTE_REGION: europe-west1
 
+
       - name: Configure Docker Credentials
-        run: gcloud auth configure-docker -q
+        run: gcloud auth configure-docker --service-account ${SERVICE_ACCOUNT_EMAIL
       
       - name: Build and Push Docker Image
         working-directory: ./frontend
