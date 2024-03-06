@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/l00171238/mate-match.git
     targetRevision: HEAD
-    path: infra/frontend.yaml
+    path: ./infra/frontend.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: matchmate
