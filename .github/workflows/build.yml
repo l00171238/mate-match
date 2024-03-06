@@ -27,7 +27,7 @@ jobs:
       - name: Build and Push Docker Image
         working-directory: ./frontend
         run: |
-          docker build -t gcr.io/$PROJECT_ID/$IMAGE:$TAG .
+          docker build -t gcr.io/$PROJECT_ID/$IMAGE:$TAG .  
           docker push gcr.io/$PROJECT_ID/$IMAGE:$TAG
 
 
