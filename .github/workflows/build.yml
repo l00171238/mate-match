@@ -5,31 +5,25 @@ on:
     branches: [  ]
 
 jobs:
-  build-push-gcr:
+  build-push-dockerhub:
     runs-on: ubuntu-latest
     env:
-      PROJECT_ID: ${{secrets.PROJECT_ID}}
+      DOCKER_USERNAME: ${{secrets.DOCKER_USER}}
+      DOCKER_PAT: ${{secrets.DOCKER_AUTH}}  
       IMAGE: frontend-argocd
       TAG: ${{github.sha}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: google-github-actions/setup-gcloud@v0.2.0
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          project_id: ${{secrets.PROJECT_ID}}
-          service_account_key:  ${{ secrets.GCR }}
-          export_default_credentials: true
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ env.DOCKER_AUTH }}  // 
 
-      - name: Configure Docker Credentials
-        run: gcloud auth configure-docker -q
-      
       - name: Build and Push Docker Image
         working-directory: ./frontend
         run: |
-          docker build -t gcr.io/$PROJECT_ID/$IMAGE .  
-          docker push gcr.io/$PROJECT_ID/$IMAGE
-
-
-
-
+          docker build -t $DOCKER_USERNAME/$IMAGE:$TAG .  
+          docker push $DOCKER_USERNAME/$IMAGE:$TAG
