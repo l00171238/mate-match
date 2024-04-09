@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: mvn05/mvn05/frontend-argocd:latest
+        image: mvn05/frontend-argocd:latest
         ports:
         - containerPort: 8080        
         resources:
