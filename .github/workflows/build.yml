@@ -11,7 +11,7 @@ jobs:
       DOCKER_USERNAME: ${{secrets.DOCKER_USER}}
       DOCKER_PAT: ${{secrets.DOCKER_AUTH}}  
       IMAGE: frontend-argocd
-      TAG: ${{github.sha}}
+      TAG: latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
